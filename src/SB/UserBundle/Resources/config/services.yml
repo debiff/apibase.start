@@ -1,0 +1,13 @@
+services:
+    sb_api.event.jwt_created_listener:
+        class: SB\UserBundle\EventListener\JWTCreatedListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+    sb_api.event.jwt_decoded_listener:
+        class: SB\UserBundle\EventListener\JWTDecodedListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_decoded, method: onJWTDecoded }
+    sb_api.event.jwt_authenticated_listener:
+        class: SB\UserBundle\EventListener\JWTResponseListener
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
