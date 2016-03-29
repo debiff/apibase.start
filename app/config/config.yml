@@ -17,8 +17,9 @@ framework:
         resource: "%kernel.root_dir%/config/routing.yml"
         strict_requirements: ~
     form:            ~
-    csrf_protection: ~
-    validation:      { enable_annotations: true }
+    csrf_protection:
+        enabled:        false
+    validation:      { enabled: true, enable_annotations: true }
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
@@ -79,6 +80,9 @@ fos_user:
     db_driver: orm
     firewall_name: login
     user_class: SB\UserBundle\Entity\User
+    registration:
+        form:
+            type: app_user_registration
 
 # FOS_rest Configuration
 fos_rest:
@@ -99,5 +103,14 @@ fos_rest:
     body_listener: true
     access_denied_listener:
         json: true
+
+# JMS Serializer
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            FOSUB:
+                namespace_prefix: "FOS\\UserBundle"
+                path: "%kernel.root_dir%/serializer/FOSUB"
 
 

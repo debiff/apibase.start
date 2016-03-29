@@ -23,6 +23,15 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(name="name", type="string", length=32, nullable=true)
+     *
+     */
+    //* @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+    //* @Type("string")
+    private $name;
+
+
     public function __construct()
     {
         parent::__construct();

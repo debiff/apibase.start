@@ -1,0 +1,9 @@
+FOS\UserBundle\Model\User:
+    exclusion_policy: ALL
+    properties:
+            email:
+                expose: true
+                accessor: # access_type must be set to public_method
+                    getter: getEmail
+                    setter: setEmail
+                type: string

@@ -6,7 +6,6 @@
  * Time: 21.12
  * Description: override default JWTResponseListener; here you can insert public data in the response
  */
-
 namespace SB\UserBundle\EventListener;
 
 use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationSuccessEvent;
@@ -21,18 +20,14 @@ class JWTResponseListener
     {
         $data = $event->getData();
         $user = $event->getUser();
-
         if (!$user instanceof UserInterface) {
             return;
         }
-
         // $data['token'] contains the JWT
-
         $data['data'] = array(
             'username' => $user->getUsername(),
             'roles' => $user->getRoles()
         );
-
         $event->setData($data);
     }
 }
