@@ -11,7 +11,7 @@ parameters:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -83,6 +83,7 @@ fos_user:
     registration:
         form:
             type: app_user_registration
+            validation_groups: [Registration]
 
 # FOS_rest Configuration
 fos_rest:

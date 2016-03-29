@@ -44,39 +44,4 @@ class UserController extends Controller
         );
         return $data;
     }
-
-   /*
-    /**
-     * @POST("/new")
-     */
-    /*public function registerAction(Request $request){
-        $form = $this->container->get('fos_user.registration.form');
-        $formHandler = $this->container->get('fos_user.registration.form.handler');
-        $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
-
-        /*$user=$this->deserialize($request,'SB\UserBundle\Entity\User');
-        $errors = $validator->validate($user, array('Registration'));
-        $form->handleRequest($request);*/
-        /*$userManager = $this->container->get('fos_user.user_manager');
-        $user = $userManager->createUser();
-        $user->setRoles(array('ROLE_USER'));
-        //$newUser=$this->deserialize($request,'SB\UserBundle\Entity\User');
-       //$process = $formHandler->process($confirmationEnabled);
-
-        /*$process = $formHandler->process(true);
-
-        if ($process) {
-
-            $user = $form->getData();
-
-        }*/
-        //$form->handleRequest($request);
-        /*if ($form->isSubmitted() ) {
-        }
-        if ($form->isValid()) {
-
-        }else{
-            die('error:' . $errors);
-        }*/
-    /*}*/
 }
