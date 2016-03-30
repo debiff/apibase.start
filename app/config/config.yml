@@ -82,8 +82,9 @@ fos_user:
     user_class: SB\UserBundle\Entity\User
     registration:
         form:
-            type: app_user_registration
+            type: registration
             validation_groups: [Registration]
+            name: user
 
 # FOS_rest Configuration
 fos_rest:

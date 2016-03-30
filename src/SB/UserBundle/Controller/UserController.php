@@ -44,4 +44,5 @@ class UserController extends Controller
         );
         return $data;
     }
+
 }
